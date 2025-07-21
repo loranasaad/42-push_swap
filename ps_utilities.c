@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi_safe.c                                     :+:      :+:    :+:   */
+/*   ps_utilities.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: loasaad <loasaad@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 09:39:14 by loasaad           #+#    #+#             */
-/*   Updated: 2025/07/17 10:23:29 by loasaad          ###   ########.fr       */
+/*   Updated: 2025/07/21 15:45:41 by loasaad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_atoi_safe(const char *str, int *result)
+int	is_duplicate(t_list *a, int n)
+{
+	
+}
+int	ps_atoi_safe(const char *str, int *result)
 {
 	int		i;
 	int		sign;
@@ -41,5 +45,30 @@ int	ft_atoi_safe(const char *str, int *result)
 	if (str[i])
 		return (0);
 	*result = (int)(sign * numb);
+	return (1);
+}
+
+int	ps_lst_add_back(t_stack *a, int n)
+{
+	t_node	*new;
+	t_node	*current;
+	
+	if (is_duplicate(a, n))
+		return (0);
+	new = malloc(sizeof(t_node));
+	if (!new)
+		return (0);
+	new->number = n;
+	new->next = NULL;
+	if (a->top == NULL)
+		a->top = new;
+	else
+	{
+		current = a->top;
+		while (current-> next)
+			current = current->next;
+		current->next = new;
+	}
+	a->size++;
 	return (1);
 }

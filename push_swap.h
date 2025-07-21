@@ -6,7 +6,7 @@
 /*   By: loasaad <loasaad@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 08:10:06 by loasaad           #+#    #+#             */
-/*   Updated: 2025/07/17 10:05:25 by loasaad          ###   ########.fr       */
+/*   Updated: 2025/07/21 14:51:52 by loasaad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,11 @@ typedef struct s_stack
 	int		size;
 }			t_stack;
 
-int	push_swap(int argc, char **argv);
+int		push_swap(int argc, char **argv);
+int		ps_atoi_safe(const char *str, int *result);
+void	ps_lstadd_back(t_list **lst, t_list *new);
+t_list	*ps_lstlast(t_list *lst);
+
+
 
 #endif
