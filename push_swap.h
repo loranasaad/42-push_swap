@@ -6,7 +6,7 @@
 /*   By: loasaad <loasaad@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 08:10:06 by loasaad           #+#    #+#             */
-/*   Updated: 2025/07/21 17:14:54 by loasaad          ###   ########.fr       */
+/*   Updated: 2025/07/21 17:50:23 by loasaad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,7 @@ int		push_swap(int argc, char **argv);
 int		ps_atoi_safe(const char *str, int *result);
 int		ps_lst_add_back(t_stack *a, int n);
 int		is_duplicate(t_stack *a, int n);
+int		parse_input(int argc, char **argv, t_stack *a);
+void	free_input_list(char **input_list);
 
 #endif
