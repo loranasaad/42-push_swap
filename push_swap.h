@@ -6,7 +6,7 @@
 /*   By: loasaad <loasaad@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 08:10:06 by loasaad           #+#    #+#             */
-/*   Updated: 2025/07/21 14:51:52 by loasaad          ###   ########.fr       */
+/*   Updated: 2025/07/21 17:14:54 by loasaad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,7 @@ typedef struct s_stack
 
 int		push_swap(int argc, char **argv);
 int		ps_atoi_safe(const char *str, int *result);
-void	ps_lstadd_back(t_list **lst, t_list *new);
-t_list	*ps_lstlast(t_list *lst);
-
-
+int		ps_lst_add_back(t_stack *a, int n);
+int		is_duplicate(t_stack *a, int n);
 
 #endif

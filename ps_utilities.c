@@ -6,15 +6,24 @@
 /*   By: loasaad <loasaad@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 09:39:14 by loasaad           #+#    #+#             */
-/*   Updated: 2025/07/21 15:45:41 by loasaad          ###   ########.fr       */
+/*   Updated: 2025/07/21 17:05:39 by loasaad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	is_duplicate(t_list *a, int n)
+int	is_duplicate(t_stack *a, int n)
 {
+	t_node	*current;
 	
+	current = a->top;
+	while (current)
+	{
+		if (n == current->number)
+			return (1);
+		current = current->next;
+	}
+	return (0);
 }
 int	ps_atoi_safe(const char *str, int *result)
 {
