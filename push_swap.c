@@ -6,27 +6,26 @@
 /*   By: loasaad <loasaad@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 08:10:26 by loasaad           #+#    #+#             */
-/*   Updated: 2025/07/24 16:01:31 by loasaad          ###   ########.fr       */
+/*   Updated: 2025/07/28 23:11:13 by loasaad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+//#include <stdio.h>
 
-void free_stack(t_stack *a)
+void	sort_stack(t_stack *a, t_stack *b)
 {
-	t_node	*current;
-	t_node	*next;
-
-	current = a->top;
-	while (current)
-	{
-		next = current->next;
-		free(current);
-		current = next;
-	}
+	if (a->size == 2)
+		sort_2(a);
+	else if (a->size == 3)
+		sort_3(a);
+	else if (a->size == 4)
+		sort_4(a, b);
+	else if (a->size == 5)
+		sort_5(a, b);
 }
 
-int push_swap(int argc, char **argv)
+int main(int argc, char **argv)
 {
 	t_stack	a;
 	t_stack	b;
@@ -38,15 +37,23 @@ int push_swap(int argc, char **argv)
 	if (!parse_input(argc, argv, &a))
 	{
 		write(2, "Error\n", 6);
-		free_stack(&a);
+		ps_free_stack(&a);
 		return (1);
 	}
 	if (a.size == 0 || is_sorted(&a))
 	{
-		free_stack(&a);
+		ps_free_stack(&a);
 		return (0);
 	}
-	// ps_sorting;
-	free_stack(&a);
+	sort_stack(&a, &b);
+	t_node	*current = a.top;
+	/*
+	while (current)
+	{
+		printf("%d\n", current->number);
+		current = current->next;
+	}
+	ps_free_stack(&a);
+	*/
 	return (0);	
 }

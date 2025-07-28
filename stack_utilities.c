@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_utilities.c                                     :+:      :+:    :+:   */
+/*   stack_utilities.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: loasaad <loasaad@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 09:39:14 by loasaad           #+#    #+#             */
-/*   Updated: 2025/07/24 16:01:28 by loasaad          ###   ########.fr       */
+/*   Updated: 2025/07/28 16:45:17 by loasaad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int is_sorted(t_stack *a)
+int	is_sorted(t_stack *a)
 {
 	t_node	*current;
 	
@@ -41,6 +41,21 @@ int	is_duplicate(t_stack *a, int n)
 	}
 	return (0);
 }
+
+void	ps_free_stack(t_stack *a)
+{
+	t_node	*current;
+	t_node	*next;
+
+	current = a->top;
+	while (current)
+	{
+		next = current->next;
+		free(current);
+		current = next;
+	}
+}
+
 int	ps_atoi_safe(const char *str, int *result)
 {
 	int		i;

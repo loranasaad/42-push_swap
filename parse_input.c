@@ -6,7 +6,7 @@
 /*   By: loasaad <loasaad@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 08:34:18 by loasaad           #+#    #+#             */
-/*   Updated: 2025/07/24 16:01:25 by loasaad          ###   ########.fr       */
+/*   Updated: 2025/07/28 22:43:10 by loasaad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int parse_input(int argc, char **argv, t_stack *a)
 	int		i;
 	int		n;
 	
+	input_list = NULL;
 	i = 0;
 	if (argc < 2)
 		return (0);
@@ -50,5 +51,4 @@ int parse_input(int argc, char **argv, t_stack *a)
 	if (argc == 2)
 		free_input_list(input_list);
 	return (1);
-	
 }
