@@ -6,7 +6,7 @@
 /*   By: loasaad <loasaad@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 08:10:06 by loasaad           #+#    #+#             */
-/*   Updated: 2025/07/28 22:49:15 by loasaad          ###   ########.fr       */
+/*   Updated: 2025/07/28 23:47:52 by loasaad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 typedef struct s_node
 {
 	int				number;
+	int				index;
 	struct s_node	*next;
 }					t_node;
 

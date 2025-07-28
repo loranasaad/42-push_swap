@@ -6,7 +6,7 @@
 /*   By: loasaad <loasaad@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 16:28:40 by loasaad           #+#    #+#             */
-/*   Updated: 2025/07/28 22:20:10 by loasaad          ###   ########.fr       */
+/*   Updated: 2025/07/29 00:08:59 by loasaad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,81 @@ void	move_index_to_top (t_stack *stack, int	index)
 			index--;
 		}
 	else
-		while(stack->size - index)
+		while(stack->size - index > 0)
 		{
 			rra(stack);
 			index++;
 		}
+}
+
+void	assign_indexes(t_stack *a)
+{
+	int		*arr;
+	t_node	*current;
+	int		i;
+	
+	arr = fill_array(a);
+	if (!arr)
+		return;
+	bubble_sort(arr, a->size);
+	current = a->top;
+	while (current)
+	{
+		i = 0;
+		while (i < a->size)
+		{
+			if (arr[i] == current->number)
+			{
+				current->index = i;
+				break;
+			}
+			i++;
+		}
+		current = current->next;
+	}
+	free(arr);
+}
+int	*fill_array(t_stack *a)
+{
+	int		*arr;
+	t_node	*current;
+	int		i;
+	
+	arr = malloc(sizeof(int)*a->size);
+	if(!arr)
+		return (NULL);
+	current = a->top;
+	i = 0;
+	while(current)
+	{
+		arr[i] = current->number;
+		i++;
+		current = current->next;
+	}
+	return (arr);
+}
+
+
+void bubble_sort(int *arr, int size)
+{
+	int	i;
+	int	j;
+	int	temp;
+	
+	i = 0;
+	while (i < size -1)
+	{
+		j = 0;
+		while (j < size - i - 1)
+		{
+			if (arr[j] > arr[j + 1])
+			{
+				temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+			}
+			j++;
+		}
+		i++;
+	}
 }
