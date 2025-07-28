@@ -6,7 +6,7 @@
 /*   By: loasaad <loasaad@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 08:10:26 by loasaad           #+#    #+#             */
-/*   Updated: 2025/07/21 18:04:56 by loasaad          ###   ########.fr       */
+/*   Updated: 2025/07/24 16:01:31 by loasaad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,25 @@ void free_stack(t_stack *a)
 
 int push_swap(int argc, char **argv)
 {
-	t_stack	*a;
+	t_stack	a;
+	t_stack	b;
 
-	a = NULL;
-	if (!parse_input(argc, argv, a))
+	a.top = NULL;
+	a.size = 0;
+	b.top = NULL;
+	b.size = 0;
+	if (!parse_input(argc, argv, &a))
 	{
-		write(1, "Error\n", 6);
-		free_stack(a);
+		write(2, "Error\n", 6);
+		free_stack(&a);
 		return (1);
 	}
-	if (!a || is_sorted(a))
+	if (a.size == 0 || is_sorted(&a))
+	{
+		free_stack(&a);
 		return (0);
+	}
 	// ps_sorting;
-	// free memory
+	free_stack(&a);
 	return (0);	
 }

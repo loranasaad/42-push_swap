@@ -6,11 +6,27 @@
 /*   By: loasaad <loasaad@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 09:39:14 by loasaad           #+#    #+#             */
-/*   Updated: 2025/07/21 17:55:18 by loasaad          ###   ########.fr       */
+/*   Updated: 2025/07/24 16:01:28 by loasaad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int is_sorted(t_stack *a)
+{
+	t_node	*current;
+	
+	current = a->top;
+	if (a->size < 2)
+		return (1);
+	while (current->next)
+	{
+		if (current->number > current->next->number)
+			return (0);
+		current = current->next;
+	}
+	return (1);
+}
 
 int	is_duplicate(t_stack *a, int n)
 {
