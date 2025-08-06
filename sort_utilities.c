@@ -6,7 +6,7 @@
 /*   By: loasaad <loasaad@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 16:28:40 by loasaad           #+#    #+#             */
-/*   Updated: 2025/07/29 00:08:59 by loasaad          ###   ########.fr       */
+/*   Updated: 2025/07/29 14:39:54 by loasaad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ int	find_min_index(t_stack *stack)
 	return (min_index);
 }
 
-void	move_index_to_top (t_stack *stack, int	index)
+void	move_index_to_top(t_stack *stack, int	index)
 {
 	
-	if ((stack->size)/2 > index)
+	if ((stack->size) / 2 > index)
 		while(index)
 		{
 			ra(stack);
@@ -99,7 +99,6 @@ int	*fill_array(t_stack *a)
 	}
 	return (arr);
 }
-
 
 void bubble_sort(int *arr, int size)
 {

@@ -6,12 +6,12 @@
 /*   By: loasaad <loasaad@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 08:10:26 by loasaad           #+#    #+#             */
-/*   Updated: 2025/07/28 23:11:13 by loasaad          ###   ########.fr       */
+/*   Updated: 2025/07/29 15:37:11 by loasaad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-//#include <stdio.h>
+#include <stdio.h>
 
 void	sort_stack(t_stack *a, t_stack *b)
 {
@@ -23,6 +23,16 @@ void	sort_stack(t_stack *a, t_stack *b)
 		sort_4(a, b);
 	else if (a->size == 5)
 		sort_5(a, b);
+	else if (a->size <= 100)
+	{
+		assign_indexes(a);
+		sort_chunks(a, b);
+	}
+	else if (a->size > 100)
+	{
+		assign_indexes(a);
+		sort_chunks_l(a, b);
+	}
 }
 
 int main(int argc, char **argv)
@@ -46,14 +56,14 @@ int main(int argc, char **argv)
 		return (0);
 	}
 	sort_stack(&a, &b);
-	t_node	*current = a.top;
-	/*
-	while (current)
-	{
-		printf("%d\n", current->number);
-		current = current->next;
-	}
-	ps_free_stack(&a);
-	*/
+	
+	// t_node	*current = a.top;
+	// while (current)
+	// {
+	// 	printf("%d\n", current->number);
+	// 	current = current->next;
+	// }
+	
+	// ps_free_stack(&a);
 	return (0);	
 }

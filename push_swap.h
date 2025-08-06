@@ -6,7 +6,7 @@
 /*   By: loasaad <loasaad@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 08:10:06 by loasaad           #+#    #+#             */
-/*   Updated: 2025/07/28 23:47:52 by loasaad          ###   ########.fr       */
+/*   Updated: 2025/07/29 15:24:42 by loasaad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ typedef struct s_stack
 	int		size;
 }			t_stack;
 
-
 void	sort_stack(t_stack *a, t_stack *b);
 
 int		is_sorted(t_stack *a);
@@ -46,6 +45,11 @@ int		parse_input(int argc, char **argv, t_stack *a);
 
 int		find_min_index(t_stack *stack);
 void	move_index_to_top (t_stack *stack, int	index);
+void	assign_indexes(t_stack *a);
+int		*fill_array(t_stack *a);
+void 	bubble_sort(int *arr, int size);
+
+int		find_pos_max_index(t_stack *stack);
 
 void	pa(t_stack *a, t_stack *b);
 void	pb(t_stack *a, t_stack *b);
@@ -66,5 +70,8 @@ void	sort_2(t_stack *a);
 void	sort_3(t_stack *a);
 void	sort_4(t_stack *a, t_stack *b);
 void	sort_5(t_stack *a, t_stack *b);
+
+void	sort_chunks(t_stack *a, t_stack *b);
+void	sort_chunks_l(t_stack *a, t_stack *b);
 
 #endif

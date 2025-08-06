@@ -9,7 +9,10 @@ INCLUDES	= -I. -I$(LIBFT_DIR)
 SRCS = push_swap.c \
        parse_input.c \
        sort_small.c \
+	   sort_medium.c \
+	   sort_large.c \
        sort_utilities.c \
+	   sort_utilities_2.c \
        stack_utilities.c \
        ops_swap.c \
        ops_push.c \
