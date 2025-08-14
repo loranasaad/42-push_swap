@@ -6,7 +6,7 @@
 /*   By: loasaad <loasaad@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 08:10:06 by loasaad           #+#    #+#             */
-/*   Updated: 2025/07/29 15:24:42 by loasaad          ###   ########.fr       */
+/*   Updated: 2025/08/14 13:54:31 by loasaad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,16 @@ void	free_input_list(char **input_list);
 int		parse_input(int argc, char **argv, t_stack *a);
 
 int		find_min_index(t_stack *stack);
-void	move_index_to_top (t_stack *stack, int	index);
+void	move_pos_to_top (t_stack *stack, int	index);
 void	assign_indexes(t_stack *a);
 int		*fill_array(t_stack *a);
 void 	bubble_sort(int *arr, int size);
 
+int		get_index_at_pos(t_stack *stack, int pos);
 int		find_pos_max_index(t_stack *stack);
+int		find_pos_in_chunk (int	chunk_min, int chunk_max, t_stack *stack);
+int		find_top_in_range (int	chunk_min, int chunk_max, t_stack *stack);
+int		find_bottom_in_range (int	chunk_min, int chunk_max, t_stack *stack);
 
 void	pa(t_stack *a, t_stack *b);
 void	pb(t_stack *a, t_stack *b);

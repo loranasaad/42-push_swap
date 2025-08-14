@@ -6,7 +6,7 @@
 /*   By: loasaad <loasaad@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 15:24:02 by loasaad           #+#    #+#             */
-/*   Updated: 2025/07/29 15:24:24 by loasaad          ###   ########.fr       */
+/*   Updated: 2025/08/12 14:23:45 by loasaad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	sort_chunks_l(t_stack *a, t_stack *b)
 	int	chunk_max;
 	int	pushed_count;
 
-	chunk_size = a->size / 11;
+	chunk_size = a->size / 10;
 	chunk_min = 0;
 	chunk_max = chunk_min + chunk_size;
 	pushed_count = 0;
@@ -44,8 +44,7 @@ void	sort_chunks_l(t_stack *a, t_stack *b)
 
 	while (b->size > 0)
 	{
-		move_index_to_top(b, find_pos_max_index(b));
+		move_pos_to_top(b, find_pos_max_index(b));
 		pa(a, b);
 	}
 }
-

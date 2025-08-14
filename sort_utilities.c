@@ -6,7 +6,7 @@
 /*   By: loasaad <loasaad@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 16:28:40 by loasaad           #+#    #+#             */
-/*   Updated: 2025/07/29 14:39:54 by loasaad          ###   ########.fr       */
+/*   Updated: 2025/08/12 12:52:09 by loasaad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	find_min_index(t_stack *stack)
 	return (min_index);
 }
 
-void	move_index_to_top(t_stack *stack, int	index)
+void	move_pos_to_top(t_stack *stack, int index)
 {
 	
 	if ((stack->size) / 2 > index)
