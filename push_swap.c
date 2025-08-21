@@ -6,7 +6,7 @@
 /*   By: loasaad <loasaad@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 08:10:26 by loasaad           #+#    #+#             */
-/*   Updated: 2025/07/29 15:37:11 by loasaad          ###   ########.fr       */
+/*   Updated: 2025/08/21 18:09:25 by loasaad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,10 @@ void	sort_stack(t_stack *a, t_stack *b)
 		sort_4(a, b);
 	else if (a->size == 5)
 		sort_5(a, b);
-	else if (a->size <= 100)
+	else if (a->size > 5)
 	{
 		assign_indexes(a);
-		sort_chunks(a, b);
-	}
-	else if (a->size > 100)
-	{
-		assign_indexes(a);
-		sort_chunks_l(a, b);
+		sort_big(a, b);
 	}
 }
 
@@ -39,7 +34,9 @@ int main(int argc, char **argv)
 {
 	t_stack	a;
 	t_stack	b;
-
+	
+	if (argc < 2)
+		return (0);
 	a.top = NULL;
 	a.size = 0;
 	b.top = NULL;
@@ -56,7 +53,9 @@ int main(int argc, char **argv)
 		return (0);
 	}
 	sort_stack(&a, &b);
-	
+	return (0);	
+}
+
 	// t_node	*current = a.top;
 	// while (current)
 	// {
@@ -65,5 +64,3 @@ int main(int argc, char **argv)
 	// }
 	
 	// ps_free_stack(&a);
-	return (0);	
-}

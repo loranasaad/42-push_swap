@@ -6,7 +6,7 @@
 /*   By: loasaad <loasaad@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 16:28:40 by loasaad           #+#    #+#             */
-/*   Updated: 2025/08/15 10:45:23 by loasaad          ###   ########.fr       */
+/*   Updated: 2025/08/21 17:49:57 by loasaad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,4 +108,11 @@ void bubble_sort(int *arr, int size)
 		}
 		i++;
 	}
+}
+
+int	absolute(int x)
+{
+	if (x < 0)
+		return (-x);
+	return (x);
 }

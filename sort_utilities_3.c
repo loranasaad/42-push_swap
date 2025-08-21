@@ -6,7 +6,7 @@
 /*   By: loasaad <loasaad@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 17:44:47 by loasaad           #+#    #+#             */
-/*   Updated: 2025/08/21 14:27:39 by loasaad          ###   ########.fr       */
+/*   Updated: 2025/08/21 17:49:48 by loasaad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int	pos_insert_a(t_stack *a, int index_b)
 	return (pos_min);
 }
 
-void	overlap_rotate(int *rot_a, int *rot_b, t_stack *a, t_stack *b)
+void	overlap_rotate(t_stack *a, t_stack *b, int *rot_a, int *rot_b)
 {
 	while (*rot_a > 0 && *rot_b > 0)
 	{
@@ -90,6 +90,68 @@ void	overlap_rotate(int *rot_a, int *rot_b, t_stack *a, t_stack *b)
 		(*rot_a)++;
 		(*rot_b)++;
 	}
+}
+
+int	candidate_cost(t_stack *a, t_stack *b, int pos_b)
+{
+	int	index_b;
+	int	pos_a;
+	int	rot_a;
+	int	rot_b;
+	int	abs_a;
+	int	abs_b;
+	
+	index_b = get_index_at_pos(b, pos_b);
+	pos_a = pos_insert_a(a, index_b);
+	rot_a = calculate_dist(pos_a, a->size);
+	rot_b = calculate_dist(pos_b, b->size);
+	abs_a = absolute(rot_a);
+	abs_b = absolute(rot_b);
+	if ((rot_a >= 0 && rot_b >= 0) || (rot_a <= 0 && rot_b <= 0))
+	{
+		if (abs_a > abs_b)
+			return (abs_a);
+		return (abs_b);
+	}
+	return (abs_a + abs_b);
+}
+// int	candidate_cost(t_stack *a, t_stack *b, int pos_b)
+// {
+// 	int	index_b;
+// 	int	pos_a;
+// 	int	rot_a;
+// 	int	rot_b;
+	
+// 	index_b = get_index_at_pos(b, pos_b);
+// 	pos_a = pos_insert_a(a, index_b);
+// 	rot_a = calculate_dist(pos_a, a->size);
+// 	rot_b = calculate_dist(pos_b, b->size);
+// 	return (max_abs(rot_a, rot_b));
+// }
+
+int	best_candidate(t_stack *a, t_stack *b)
+{
+	int	pos_b;
+	int	best_pos;
+	int	best_cost;
+	int	cost;
+	
+	if (!b || b->size == 0)
+		return (-1);
+	pos_b = 0;
+	best_pos = 0;
+	best_cost = INT_MAX;
+	while (pos_b < b->size)
+	{
+		cost = candidate_cost(a, b, pos_b);
+		if (cost < best_cost)
+		{
+			best_cost = cost;
+			best_pos = pos_b;
+		}
+		pos_b++;
+	}
+	return (best_pos);
 }
 
 
