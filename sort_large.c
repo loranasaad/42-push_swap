@@ -6,7 +6,7 @@
 /*   By: loasaad <loasaad@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 15:24:02 by loasaad           #+#    #+#             */
-/*   Updated: 2025/08/12 14:23:45 by loasaad          ###   ########.fr       */
+/*   Updated: 2025/08/15 07:53:56 by loasaad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	sort_chunks_l(t_stack *a, t_stack *b)
 
 	while (b->size > 0)
 	{
-		move_pos_to_top(b, find_pos_max_index(b));
+		move_pos_to_top(b, find_pos_max_index(b), 'b');
 		pa(a, b);
 	}
 }

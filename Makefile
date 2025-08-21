@@ -13,6 +13,7 @@ SRCS = push_swap.c \
 	   sort_large.c \
        sort_utilities.c \
 	   sort_utilities_2.c \
+	   sort_utilities_3.c \
        stack_utilities.c \
        ops_swap.c \
        ops_push.c \

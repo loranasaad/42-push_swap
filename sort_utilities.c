@@ -6,50 +6,36 @@
 /*   By: loasaad <loasaad@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 16:28:40 by loasaad           #+#    #+#             */
-/*   Updated: 2025/08/12 12:52:09 by loasaad          ###   ########.fr       */
+/*   Updated: 2025/08/15 10:45:23 by loasaad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	find_min_index(t_stack *stack)
+void	move_pos_to_top(t_stack *stack, int pos, char stack_name)
 {
-	int		min_index;
-	int		min_number;
-	t_node	*current;
-	int		i;
-	
-	min_index = 0;
-	min_number = stack->top->number;
-	current = stack->top;
-	i = 0;
-	while (current)
-	{
-		if (current->number < min_number)
-		{
-			min_number = current->number;
-			min_index = i;
-		}
-		current = current->next;
-		i++;
-	}
-	return (min_index);
-}
+	int	size;
 
-void	move_pos_to_top(t_stack *stack, int index)
-{
-	
-	if ((stack->size) / 2 > index)
-		while(index)
+	if (!stack || pos < 0 || pos >= stack->size)
+		return;
+	size = stack->size;
+	if (size / 2 >= pos)
+		while(pos)
 		{
-			ra(stack);
-			index--;
+			if (stack_name == 'a')
+				ra(stack);
+			else if (stack_name == 'b')
+				rb(stack);
+			pos--;
 		}
 	else
-		while(stack->size - index > 0)
+		while(size - pos > 0)
 		{
-			rra(stack);
-			index++;
+			if (stack_name == 'a')
+				rra(stack);
+			else if (stack_name == 'b')
+				rrb(stack);
+			pos++;
 		}
 }
 

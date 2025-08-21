@@ -6,7 +6,7 @@
 /*   By: loasaad <loasaad@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 12:06:03 by loasaad           #+#    #+#             */
-/*   Updated: 2025/08/14 14:15:45 by loasaad          ###   ########.fr       */
+/*   Updated: 2025/08/15 07:54:16 by loasaad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ void	sort_chunks(t_stack *a, t_stack *b)
 	int	chunk_max;
 	int	position;
 
-	chunk_size = a->size / 5;
+	chunk_size = a->size / 7;
+	if (chunk_size < 1)
+		chunk_size = 1;
 	chunk_min = 0;
 	chunk_max = chunk_min + chunk_size;
 	while (a->size > 0)
@@ -33,7 +35,7 @@ void	sort_chunks(t_stack *a, t_stack *b)
 		}
 		else
 		{
-			move_pos_to_top(a, position);
+			move_pos_to_top(a, position, 'a');
 			pb(a, b);
 			if (b->top->index < (chunk_min + chunk_max) / 2)
 				rb(b);
@@ -41,7 +43,7 @@ void	sort_chunks(t_stack *a, t_stack *b)
 	}
 	while (b->size > 0)
 	{
-		move_pos_to_top(b, find_pos_max_index(b));
+		move_pos_to_top(b, find_pos_max_index(b), 'b');
 		pa(a, b);
 	}
 }

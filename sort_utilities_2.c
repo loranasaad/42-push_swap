@@ -6,7 +6,7 @@
 /*   By: loasaad <loasaad@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 11:56:37 by loasaad           #+#    #+#             */
-/*   Updated: 2025/08/14 13:42:37 by loasaad          ###   ########.fr       */
+/*   Updated: 2025/08/14 14:37:29 by loasaad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,12 +74,7 @@ int	find_pos_in_chunk (int	chunk_min, int chunk_max, t_stack *stack)
 	if (top_pos < (size - bottom_pos))
 		return (top_pos);
 	if (top_pos == size - bottom_pos)
-	{
-		if (get_index_at_pos(stack, top_pos) <= get_index_at_pos(stack, bottom_pos))
-			return (top_pos);
-		else
-			return (bottom_pos);
-	}
+		return (top_pos);
 	else
 		return (bottom_pos);
 }
