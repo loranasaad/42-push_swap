@@ -6,7 +6,7 @@
 /*   By: loasaad <loasaad@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 08:10:06 by loasaad           #+#    #+#             */
-/*   Updated: 2025/08/21 17:57:03 by loasaad          ###   ########.fr       */
+/*   Updated: 2025/08/21 18:18:00 by loasaad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,6 @@ int		absolute(int x);
 int		get_index_at_pos(t_stack *stack, int pos);
 int		find_pos_max_index(t_stack *stack);
 int		find_pos_in_chunk (int	chunk_min, int chunk_max, t_stack *stack);
-int		find_top_in_range (int	chunk_min, int chunk_max, t_stack *stack);
-int		find_bottom_in_range (int	chunk_min, int chunk_max, t_stack *stack);
 
 int		find_pos_min_index(t_stack *stack);
 int		calculate_dist(int pos, int size);

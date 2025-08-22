@@ -6,37 +6,11 @@
 /*   By: loasaad <loasaad@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 17:44:47 by loasaad           #+#    #+#             */
-/*   Updated: 2025/08/21 17:49:48 by loasaad          ###   ########.fr       */
+/*   Updated: 2025/08/21 18:18:28 by loasaad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	find_pos_min_index(t_stack *stack)
-{
-	int		min_index;
-	int		min_position;
-	t_node	*current;
-	int		i;
-	
-	if (!stack || stack->size <= 0)
-		return (-1);
-	current = stack->top;
-	min_index = current->index;
-	min_position = 0;
-	i = 0;
-	while (current)
-	{
-		if (current->index < min_index)
-		{
-			min_index = current->index;
-			min_position = i;
-		}
-		current = current->next;
-		i++;
-	}
-	return (min_position);
-}
 
 int	calculate_dist(int pos, int size)
 {
@@ -115,19 +89,6 @@ int	candidate_cost(t_stack *a, t_stack *b, int pos_b)
 	}
 	return (abs_a + abs_b);
 }
-// int	candidate_cost(t_stack *a, t_stack *b, int pos_b)
-// {
-// 	int	index_b;
-// 	int	pos_a;
-// 	int	rot_a;
-// 	int	rot_b;
-	
-// 	index_b = get_index_at_pos(b, pos_b);
-// 	pos_a = pos_insert_a(a, index_b);
-// 	rot_a = calculate_dist(pos_a, a->size);
-// 	rot_b = calculate_dist(pos_b, b->size);
-// 	return (max_abs(rot_a, rot_b));
-// }
 
 int	best_candidate(t_stack *a, t_stack *b)
 {
