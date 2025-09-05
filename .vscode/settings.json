@@ -1,6 +1,7 @@
 {
 	"files.associations": {
 		"ranges": "c",
-		"push_swap.h": "c"
+		"push_swap.h": "c",
+		"unistd.h": "c"
 	}
 }

@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: loasaad <loasaad@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/17 12:40:53 by loasaad           #+#    #+#             */
-/*   Updated: 2025/05/19 16:08:58 by loasaad          ###   ########.fr       */
+/*   Created: 2025/09/05 18:23:03 by loasaad           #+#    #+#             */
+/*   Updated: 2025/09/05 18:23:25 by loasaad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
 static int	ft_word_cntr(const char *str, char c)
 {
